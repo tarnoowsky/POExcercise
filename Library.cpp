@@ -7,13 +7,12 @@ using namespace std;
 
 class BookDetails
 {
-private:
+public:
     string author;
     string category;
     unsigned int numberOfPages;
     bool isOnShelf;
 
-public:
     BookDetails(string a, string c, unsigned int n, bool o) : author(a), category(c), numberOfPages(n), isOnShelf(o) {}
 
     friend ostream &operator<<(ostream &out, const BookDetails &book)
@@ -58,16 +57,16 @@ void modifyBooks(BookDatabase &database)
     bookPtr = database.find("Macbeth");
     if (bookPtr)
     {
-        bookPtr->changeCategory("Classic tragedy");
+        bookPtr->category = "Classic tragedy";
     }
     bookPtr = database.find("Hamlet");
     if (bookPtr)
     {
-        bookPtr->changeNumberOfPages(220);
+        bookPtr->numberOfPages = 220;
     }
     bookPtr = database.find("Romeo and Juliet");
     if (bookPtr)
     {
-        bookPtr->changeIsOnShelf(false);
+        bookPtr->isOnShelf = false;
     }
 }
