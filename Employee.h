@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-using std::string; 
+using namespace std;
 
 class Employee {
 public:
@@ -11,7 +11,7 @@ public:
 
     Employee(string n, string p, int a) : name(n), position(p), age(a) {}
 
-    friend std::ostream& operator<<(std::ostream& out, const Employee& emp) {
+    friend ostream& operator<<(ostream& out, const Employee& emp) {
         out << "Name: " << emp.name << ", Position: " << emp.position << ", Age: " << emp.age;
         return out;
     }

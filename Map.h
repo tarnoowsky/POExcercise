@@ -1,6 +1,8 @@
 #include <vector>
 #include <iostream>
 
+using namespace std;
+
 class notFound{};
 
 template <typename Key, typename Value>
@@ -17,7 +19,7 @@ template <typename Key, typename Value>
 class Map
 {
 private:
-    std::vector<Pair<Key, Value>> Data;
+    vector<Pair<Key, Value>> Data;
 
 public:
     // Searches by key, add at the end.
@@ -47,11 +49,12 @@ public:
         throw notFound();
     }
 
-    friend std::ostream& operator<<(std::ostream& out, const Map<Key, Value>& map) {
-        for (const auto& pair : map.Data) {
+    friend ostream &operator<<(ostream &out, const Map<Key, Value> &map)
+    {
+        for (const auto &pair : map.Data)
+        {
             out << "Key: " << pair.key << ", Value: " << pair.value << std::endl;
         }
         return out;
     }
-
 };
